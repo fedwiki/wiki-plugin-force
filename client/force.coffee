@@ -26,13 +26,12 @@ window.plugins.force =
       h = 230
 
       candidates = $(".item:lt(#{$('.item').index(div)})")
-      if (who = candidates.filter ".force-source:last").size()
+      if (who = candidates.filter ".force-source:last").length
         data = who.get(0).forceData()
       else
         data = wiki.getData()
 
       json = $.extend true, {}, data
-      console.log json
 
       fill = d3.scale.category20()
 
