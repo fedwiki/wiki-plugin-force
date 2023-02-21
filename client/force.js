@@ -5,10 +5,8 @@
  * https://github.com/fedwiki/wiki-plugin-force/blob/master/LICENSE.txt
  */
 
-const d3Module = import('https://cdn.jsdelivr.net/npm/d3@7/+esm')
-
 async function emit($item, item) {
-  const d3 = await d3Module
+  const d3 = await import('https://cdn.jsdelivr.net/npm/d3@7/+esm')
   
   $item.append(`
     <style type="text/css">
@@ -86,7 +84,7 @@ async function ForceGraph({
   invalidation // when this promise resolves, stop the simulation
 } = {}) {
 
-  const d3 = await d3Module   // ensure d3 is loaded
+  const d3 = await import('https://cdn.jsdelivr.net/npm/d3@7/+esm')   // ensure d3 is loaded
 
   // Compute values.
   const N = d3.map(nodes, nodeId).map(intern);
